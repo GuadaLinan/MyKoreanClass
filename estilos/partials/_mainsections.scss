@@ -1,0 +1,70 @@
+.mainIndex {
+    background-image: url(../assets/Página\ web.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.mainCursoComun {
+    background-image: url(../assets/fondo\ curso\ comun.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .centrar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+   }
+}
+
+.mainCursoIntensivo {
+    background-image: url(../assets/intensivo\ fondo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .centrar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+   }
+}
+
+.mainMKC {
+    background-image: url(../assets/mkc\ background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .centrar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+   }
+}
+
+.mainBlog {
+    background-image: url(../assets/fondo\ blog.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+.mainMaterial {
+    background-image: url(../assets/fondo\ material.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    flex-wrap: wrap;
+    background-size: cover;
+}

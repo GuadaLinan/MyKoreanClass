@@ -1,0 +1,120 @@
+@import "./variables";
+
+header {
+    width: 100%;
+    height: 300%;
+    position: relative;
+
+    nav {
+
+        ul {
+            text-decoration: none;
+            background-image: url(/assets/navBack.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+
+            #noBG {
+                background-image: none;
+            }
+
+            li {
+                list-style: none;
+                font-family: 'Poppins', sans-serif;
+                font-size: 20px;
+                background-color: $rosaFuerte;
+                padding: 8px 15px;
+                border-radius: 20px;
+
+                li:hover {
+                    background-color: #737373;
+                }
+
+                a {
+                    color: #ffffff;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    text-decoration: none;
+                }
+            }
+
+            li:hover>ul {
+                width: 200px;
+                display: block;
+            }
+
+        }
+        
+    }
+
+
+    .logoIndex {
+        width: 6rem;
+    }
+
+    .titleIndex {
+        color: #f9908c;
+        font-family: 'Cinzel', serif;
+        text-align: center;
+        letter-spacing: 0.2rem;
+    }
+
+}
+
+.headerBoot {
+    background-image: url(/assets/navBack.png);
+    background-size: cover;
+}
+
+#logoPosition {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none;
+}
+
+.subMenu {
+    display: none;
+    position: absolute;
+    height: 0px;
+}
+
+.menu li{
+    display: inline-block;
+
+.menu li:hover ul {
+        display: block;
+    }
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px 0px 0px; 
+    flex-wrap: wrap;
+}
+
+.subMenu li {
+    display: block;
+    position: relative;
+    top: 10px;
+    margin: 3px;
+    right: 15px;
+}
+
+.sectionsTitle {
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+}
+
+li:hover {
+    background-color: #737373;
+}  
+

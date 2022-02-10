@@ -1,0 +1,114 @@
+
+@media (max-width: 370px) {
+  
+    body {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .videoTestimonios {
+        width: 20rem;
+    }
+    .section3 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .subBlog {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .weSectionPreguntas {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .weSectionRedes {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .weSectionTexto {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .centrar {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sectionWrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .preguntaGoal {
+        display: flex;
+    }
+
+    main section h3 {
+        display: none;
+    }
+
+    .fotitosMaterial {
+        margin: 1rem;
+    }
+
+    .fotitosBlog {
+        margin: 1rem;
+    }
+}
+
+@media (max-width:768px) {
+    body {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .section3 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .subBlog {
+        display: none;
+    }
+
+    .weSectionPreguntas {
+        display: none;
+    }
+
+    .fotitosBlog {
+        margin: 1rem;
+    }
+
+    .fotitosMaterial {
+        margin: 1rem;
+    }
+
+    .weSectionRedes {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .weSectionTexto {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .centrar {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+  
+}
+
+@media (min-width:1024px) {
+    body {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
