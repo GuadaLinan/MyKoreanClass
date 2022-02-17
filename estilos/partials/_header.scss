@@ -9,9 +9,7 @@ header {
 
         ul {
             text-decoration: none;
-            background-image: url(/assets/navBack.png);
             background-repeat: no-repeat;
-            background-position: center;
             background-size: cover;
             width: 100%;
 
@@ -23,12 +21,11 @@ header {
                 list-style: none;
                 font-family: 'Poppins', sans-serif;
                 font-size: 20px;
-                background-color: $rosaFuerte;
                 padding: 8px 15px;
                 border-radius: 20px;
 
                 li:hover {
-                    background-color: #737373;
+                    background-color: $rosaFuerte;
                 }
 
                 a {
@@ -41,46 +38,22 @@ header {
                 }
             }
 
-            li:hover>ul {
-                width: 200px;
-                display: block;
-            }
 
         }
         
     }
 
 
-    .logoIndex {
-        width: 6rem;
-    }
+
 
     .titleIndex {
         color: #f9908c;
         font-family: 'Cinzel', serif;
         text-align: center;
+        margin-top: 0.5rem;
         letter-spacing: 0.2rem;
     }
 
-}
-
-.headerBoot {
-    background-image: url(/assets/navBack.png);
-    background-size: cover;
-}
-
-#logoPosition {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: none;
-}
-
-.subMenu {
-    display: none;
-    position: absolute;
-    height: 0px;
 }
 
 .menu li{
@@ -89,15 +62,6 @@ header {
 .menu li:hover ul {
         display: block;
     }
-}
-
-.menu {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0px 0px 0px; 
-    flex-wrap: wrap;
 }
 
 .subMenu li {
@@ -115,6 +79,6 @@ header {
 }
 
 li:hover {
-    background-color: #737373;
+    background-color: #f9908c;
 }  
 

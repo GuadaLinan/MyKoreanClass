@@ -36,9 +36,7 @@ header {
 }
 header nav ul {
   text-decoration: none;
-  background-image: url(/assets/navBack.png);
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
   width: 100%;
 }
@@ -49,12 +47,11 @@ header nav ul li {
   list-style: none;
   font-family: "Poppins", sans-serif;
   font-size: 20px;
-  background-color: #FA9190;
   padding: 8px 15px;
   border-radius: 20px;
 }
 header nav ul li li:hover {
-  background-color: #737373;
+  background-color: #FA9190;
 }
 header nav ul li a {
   color: #ffffff;
@@ -64,37 +61,12 @@ header nav ul li a {
   padding-right: 5px;
   text-decoration: none;
 }
-header nav ul li:hover > ul {
-  width: 200px;
-  display: block;
-}
-header .logoIndex {
-  width: 6rem;
-}
 header .titleIndex {
   color: #f9908c;
   font-family: "Cinzel", serif;
   text-align: center;
+  margin-top: 0.5rem;
   letter-spacing: 0.2rem;
-}
-
-.headerBoot {
-  background-image: url(/assets/navBack.png);
-  background-size: cover;
-}
-
-#logoPosition {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: none;
-}
-
-.subMenu {
-  display: none;
-  position: absolute;
-  height: 0px;
 }
 
 .menu li {
@@ -102,15 +74,6 @@ header .titleIndex {
 }
 .menu li .menu li:hover ul {
   display: block;
-}
-
-.menu {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0px 0px 0px;
-  flex-wrap: wrap;
 }
 
 .subMenu li {
@@ -128,13 +91,14 @@ header .titleIndex {
 }
 
 li:hover {
-  background-color: #737373;
+  background-color: #f9908c;
 }
 
 .mainIndex {
   background-image: url(../assets/Página\ web.png);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -340,6 +304,7 @@ li:hover {
   border-radius: 6px;
   padding: 0.5rem;
   border-radius: 2rem;
+  text-decoration: none;
 }
 
 .fraseIndexKorean {
@@ -373,7 +338,7 @@ li:hover {
   margin-bottom: 1rem;
 }
 
-.h2Cursos {
+.h3Cursos {
   color: #fec1bc;
   text-align: center;
   font-family: "Cinzel", serif;
@@ -457,12 +422,16 @@ li:hover {
   background-image: url(../assets/p\ back.png);
   margin: 0rem 2rem 2rem 1rem;
   border-radius: 1rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 .weP2 {
   background-image: url(../assets/p\ back.png);
   margin: 0rem 2rem 2rem 1rem;
   border-radius: 1rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 .weSectionRedes {
