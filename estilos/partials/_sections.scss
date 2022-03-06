@@ -198,7 +198,6 @@
     list-style-type: circle;
 }
 
-
 .botónSaberMás {
     background-color: #ffffff;
     border-radius: 2rem;
@@ -223,10 +222,6 @@
     margin-top: 2rem;
     color: #ffffff;
     font-family: 'Cinzel', serif;
-}
-
-.preguntaGoal {
-    margin-left: 25rem;
 }
 
 .weSectionTexto {
@@ -259,15 +254,11 @@
     text-transform: uppercase;
 }
 
-.weP1 {
-    background-image: url(../assets/p\ back.png);
-    margin: 0rem 2rem 2rem 1rem;
-    border-radius: 1rem;
-    text-align: center;
-    padding: 1rem;
+.dropdown-item:hover {
+    background-color: transparent;
 }
 
-.weP2 {
+.weP1 {
     background-image: url(../assets/p\ back.png);
     margin: 0rem 2rem 2rem 1rem;
     border-radius: 1rem;

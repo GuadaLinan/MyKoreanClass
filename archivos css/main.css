@@ -133,7 +133,7 @@ li:hover {
 }
 
 .mainMKC {
-  background-image: url(/assets/mkc\ background.png);
+  background-image: url(../assets/mkc\ background.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -384,6 +384,10 @@ li:hover {
   font-family: "Cinzel", serif;
 }
 
+.preguntaGoal {
+  margin-left: 25rem;
+}
+
 .weSectionTexto {
   display: flex;
   flex-direction: row;
@@ -414,11 +418,15 @@ li:hover {
   text-transform: uppercase;
 }
 
-.dropdown-item:hover {
-  background-color: transparent;
+.weP1 {
+  background-image: url(../assets/p\ back.png);
+  margin: 0rem 2rem 2rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1rem;
 }
 
-.weP1 {
+.weP2 {
   background-image: url(../assets/p\ back.png);
   margin: 0rem 2rem 2rem 1rem;
   border-radius: 1rem;
