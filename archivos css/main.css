@@ -6,6 +6,26 @@
   box-sizing: border-box;
 }
 
+.cajita {
+  text-align: center;
+  justify-content: center;
+}
+
+.cajitaCarrito {
+  border: 2px solid #f9908c;
+  text-align: center;
+}
+
+#carrito{
+  display: flex;
+}
+
+#caja {
+  display: flex;
+  gap: 30px;
+  margin: 20px;
+}
+
 .grid {
   display: grid;
   grid-template-rows: 3, auto;

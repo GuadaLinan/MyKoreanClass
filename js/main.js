@@ -1,101 +1,113 @@
+const grupos = [
+    {
+        nivel: "Principiante",
+        horario: "Lunes 17hs",
+        pago: 2800,
+        id: 1,
+    },
+    {
+        nivel: "Intermedio",
+        horario: "Miércoles 18hs",
+        pago: 3000,
+        id: 2,
+    },
+    {
+        nivel: "Avanzado",
+        horario: "Viernes 19hs",
+        pago: 3200,
+        id: 3,
+    },
+];
 
-/* El simulador formará parte de la web de una institución del idioma coreano. Tiene como ojbetivo informar de manera sencilla a que grupo pertenecerá el inscripto, según su nivel*/
+const caja = document.getElementById("caja");
+const divCarrito = document.getElementById("carrito");
 
-/* class opcion {
-    constructor(nivel,dia,horario) {
-    this.nivel = nivel;
-    this.dia = dia;
-    this.horario = horario;
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function crearCards (){
+    grupos.forEach((element) => {
+    caja.innerHTML += `<div class="cajita">
+    <p>${element.nivel}</p>
+    <p>${element.horario}</p>
+    <p>$${element.pago}</p>
+    <button id="btn${element.id}">Seleccionar</button>
+    </div>`;
+    });
+
+    grupos.forEach((grupo) =>{
+        document.querySelector(`#btn${grupo.id}`).addEventListener("click", () => {
+            enviarAlCarrito(grupo);
+        });
+    });
 }
-}
 
-const opcion1 = new opcion ("Principiante" , "Lunes" , "17hs")
-const opcion2 = new opcion ("Intermedio" , "Miercoles" , "18hs")
-const opcion3 = new opcion ("Avanzado" , "Viernes" , "19hs")
-
-const cursos = [opcion1,opcion2,opcion3];
-
-console.log(cursos[1].nombre);
-
-let horarioPregunta = ""
-let solicitud = parseInt (prompt("Indique su nivel de coreano: \n\t 1 - Principiante \n\t 2 - Intermedio \n\t 3 - Avanzado \n\t ESC para salir " ))
-
-if (solicitud === 1 || solicitud === 2 || solicitud ===3) {
-    switch (solicitud) {
-        case 1:
-            alert("Ha seleccionado el nivel " + opcion1.nivel + " que se cursa el día " + opcion1.dia);
-            console.log(opcion1);
-            horarioPregunta = prompt ("¿Quiere saber el horario de su cursado? (SI o NO)")
-            if (horarioPregunta.toLowerCase() ===  "si") {
-                alert ("El horario es a las " + opcion1.horario)
-            } else {}
-            break;
-            
-        case 2:
-            alert("Ha seleccionado el nivel " + opcion2.nivel + " que se cursa el día " + opcion2.dia);
-            console.log(opcion2);
-            horarioPregunta = prompt ("¿Quiere saber el horario de su cursado? (SI o NO)")
-            if (horarioPregunta.toLowerCase() ===  "si") {
-                alert ("El horario es a las " + opcion2.horario)
-            } else {}
-            break;
-               
-        case 3:
-            alert("Ha seleccionado el nivel " + opcion3.nivel + " que se cursa el dia " + opcion3.dia);
-            console.log(opcion3);
-            horarioPregunta = prompt ("¿Quiere saber el horario de su cursado? (SI o NO)")
-            if (horarioPregunta.toLowerCase() ===  "si") {
-                alert ("El horario es a las " + opcion3.horario)
-            } else {} 
-             break;            
-    
-        default: 
-            break;
- }
-}
-    let grupo = prompt ("Ingrese día y hora de su grupo")
-    
-    while (grupo != "CONTINUAR") {    
-        console.log("Se ha guardado un lugar para usted en el grupo " + grupo );
-        grupo = prompt ("Si realizó todo correctamente Escriba CONTINUAR, sino repita sus datos")  
+function enviarAlCarrito(grupo) {
+    let existe = carrito.some((element) => element.id === grupo.id);
+    if (!existe) {
+        grupo.cantidad = 1;
+        carrito.push(grupo);
+    } else{
+        grupo.cantidad++;
     }
-
-    if (solicitud === 1 || solicitud === 2 || solicitud ===3) {
-        switch (solicitud) {
-            case 1:
-                alert("Su lugar fue guardado para el grupo de los días "+ opcion1.dia +" en el horario de las " + opcion1.horario + ", ¡Un gusto que te nos unas!");
-                break;
-                
-            case 2:
-                alert("Su lugar fue guardado para el grupo de los días "+ opcion2.dia +" en el horario de las " + opcion2.horario + ", ¡Un gusto que te nos unas!");
-                break;
-                   
-            case 3:
-                alert("Su lugar fue guardado para el grupo de los días "+ opcion3.dia +" en el horario de las " + opcion3.horario + ", ¡Un gusto que te nos unas!");
-                 break;            
-        
-            default: 
-                break;
-     }
-
-} else if (solicitud <1 || solicitud >3 ){
-    alert("La opcion ingresada no es valida, intente más tarde")
+    pintarCarrito();
 }
-else {
-    alert ("¡Te esperamos!")
-}*/
+
+function pintarCarrito() {
+    divCarrito.innerHTML = "";
+    carrito.forEach((element) => {
+    divCarrito.innerHTML += `<div class="cajita">
+    <p>${element.nivel}</p>
+    <p>${element.horario}</p>
+    <p>$${element.pago}</p>
+    <p>CANTIDAD: ${element.cantidad}</p>
+    <button id="borrar${element.id}">Borrar</button>
+    </div>`;
+    });
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    borrarProducto();
+}
+
+function borrarProducto() {
+    carrito.forEach((grupo) => {
+        document.querySelector(`#borrar${grupo.id}`).addEventListener("click", () => {
+        carrito = carrito.filter((element) => element.id !== libro.id);
+        pintarCarrito();
+        });
+    });
+}
+
+crearCards();
+pintarCarrito();
+
+//Ingresar nombre por el input y que aparezca en el html de la web
 
 const sectionContenedor = document.getElementById("contenedor");
 
 const bienvenida = document.getElementsByClassName ("parrafoIndex") [0]
 let ingreso = document.getElementsByTagName("input")
 
-bienvenida.innerText = "Te damos la bienvenida " + ingreso
+bienvenida.innerText = "Te damos la bienvenida"
 
-const inputNombre= document.querySelector ("#nombre")
-
-inputNombre.addEventListener("click", ()=>{
+const btnEnviar = document.querySelector("#enviar");
+btnEnviar.addEventListener("click", ()=>{
     sectionContenedor.innerText = inputNombre.value
 })
 
-inputNombre.setAttribute("type")
+const inputNombre= document.querySelector ("#nombre");
+
+inputNombre.setAttribute("type", "text");
+
+
+// const nombre = localStorage.setItem("nombre","Romina")
+
+// const grupo1 = {grupo:"1", día:"Lunes", hora:"17hs"}
+// let enJSON = JSON.stringify(grupo1)
+
+// localStorage.setItem("grupo", grupo1)
+// localStorage.setItem("grupoJSON", enJSON)
+
+// const parseo= JSON.parse(enJSON)
+// console.log(parseo);
+
+// const valorNombre= localStorage.getItem("nombre") 
+// console.log(valorNombre);
