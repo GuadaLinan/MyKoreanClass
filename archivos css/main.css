@@ -18,12 +18,29 @@
 
 #carrito{
   display: flex;
+  gap: 150px;
+  margin: 20px;
+  background-color: #f7dbdaca;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+  align-items: center;
+
 }
 
 #caja {
   display: flex;
-  gap: 30px;
+  gap: 100px;
   margin: 20px;
+  background-color: #f5aba8bc;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid {
@@ -325,6 +342,7 @@ li:hover {
   padding: 0.5rem;
   border-radius: 2rem;
   text-decoration: none;
+  justify-content: center;
 }
 
 .fraseIndexKorean {

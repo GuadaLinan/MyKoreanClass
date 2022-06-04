@@ -43,14 +43,16 @@ function crearCards (){
 
 function enviarAlCarrito(grupo) {
     let existe = carrito.some((element) => element.id === grupo.id);
-    if (!existe) {
-        grupo.cantidad = 1;
+
+    !existe ? grupo.cantidad = 1 : grupo.cantidad++
+
+    if(!existe){
         carrito.push(grupo);
-    } else{
-        grupo.cantidad++;
     }
+
     pintarCarrito();
 }
+
 
 function pintarCarrito() {
     divCarrito.innerHTML = "";
@@ -70,11 +72,12 @@ function pintarCarrito() {
 function borrarProducto() {
     carrito.forEach((grupo) => {
         document.querySelector(`#borrar${grupo.id}`).addEventListener("click", () => {
-        carrito = carrito.filter((element) => element.id !== libro.id);
+        carrito = carrito.filter((element) => element.id !== grupo.id);
         pintarCarrito();
         });
     });
 }
+
 
 crearCards();
 pintarCarrito();
@@ -91,23 +94,15 @@ bienvenida.innerText = "Te damos la bienvenida"
 const btnEnviar = document.querySelector("#enviar");
 btnEnviar.addEventListener("click", ()=>{
     sectionContenedor.innerText = inputNombre.value
+    Swal.fire({
+        title: '만나서 반갑습니다~!',
+        text: '¡Mucho gusto ' + inputNombre.value + "!" ,
+        icon: 'success',
+        confirmButtonText: 'Continuar',
+        timer: 1500
+      })
 })
 
 const inputNombre= document.querySelector ("#nombre");
 
 inputNombre.setAttribute("type", "text");
-
-
-// const nombre = localStorage.setItem("nombre","Romina")
-
-// const grupo1 = {grupo:"1", día:"Lunes", hora:"17hs"}
-// let enJSON = JSON.stringify(grupo1)
-
-// localStorage.setItem("grupo", grupo1)
-// localStorage.setItem("grupoJSON", enJSON)
-
-// const parseo= JSON.parse(enJSON)
-// console.log(parseo);
-
-// const valorNombre= localStorage.getItem("nombre") 
-// console.log(valorNombre);
