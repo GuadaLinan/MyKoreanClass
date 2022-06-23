@@ -106,3 +106,68 @@ btnEnviar.addEventListener("click", ()=>{
 const inputNombre= document.querySelector ("#nombre");
 
 inputNombre.setAttribute("type", "text");
+
+const btnFormulario = document.getElementById('button');
+const form = document.querySelector('#form');
+
+
+form.addEventListener('submit', enviarFormulario)
+
+function enviarFormulario(e) {
+
+    e.preventDefault();
+
+    btnFormulario.value = 'Enviando...'
+
+    let nombre = document.getElementById('nombre').value
+    let apellido = document.getElementById('apellido').value
+    let telefono = document.getElementById('telefono').value
+    let emailContacto = document.getElementById('email').value
+    let mensajeContacto = document.getElementById('mensaje').value
+
+    let params = {
+        user_id: '1_5g8bvDRBQdXIKJu',
+        service_id: 'service_hnl4yj7',
+        template_id: 'template_hb12lif',
+        template_params: {
+                'nombre': nombre,
+                'apellido': apellido,
+                'email': emailContacto,
+                'telefono': telefono,
+                'mensaje': mensajeContacto
+                }
+    };
+            
+    let headers = {
+        'Content-type': 'application/json'
+    };
+        
+    let options = {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(params)
+    };
+        
+    fetch('https://api.emailjs.com/api/v1.0/email/send', options)
+        .then( async (response) => {
+            if (response.ok) {
+                btnFormulario.value = 'Enviar';
+                Swal.fire({
+                    icon: 'success',
+                    iconColor:'#fad8ce',
+                    title: 'Su consulta ha sido enviada',
+                    text: 'Estaremos respondiendo pronto!',
+                    customClass:{
+                        confirmButton:'btn_4'
+                    }
+                })
+                this.reset();
+            } else {
+                return response.text()
+                .then(text => Promise.reject(text));
+                }
+        })
+        .catch((error) => {
+            console.log('Oops... ' + error);
+        });
+}

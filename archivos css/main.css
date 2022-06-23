@@ -333,6 +333,21 @@ li:hover {
   justify-content: center;
 }
 
+.btn {
+  box-shadow: none;
+  background-color: #FE7B7D;
+  color: black;
+  border-color: #73737393; }
+  .btn:focus, .btn:active {
+    box-shadow: none;
+    background-color: #73737393;
+    color: black;
+    border-color: #73737393; }
+  .btn:hover {
+    box-shadow: none;
+    background-color: #fad8ce;
+    border-color: #fad8ce; }
+
 .btnN {
   color: #373737;
   background: #f0f0f0;
